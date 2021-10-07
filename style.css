@@ -115,7 +115,7 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 .container-nav .list-nav li:nth-child(2):hover {
-  background-size: 100% 5px;
+  background-size: 100% 5px !important;
 }
 .container-nav .list-nav li:nth-child(3) {
   background-image: linear-gradient(black, black);
@@ -761,6 +761,7 @@ section .container-profil {
 .halaman-galeri {
   width: 90%;
   padding-top: 100px;
+  padding-bottom: 500px;
   margin: auto;
 }
 
@@ -841,12 +842,22 @@ section .container-profil {
 }
 
 @media (max-width: 576px) {
+  nav {
+    height: 60px !important;
+  }
   nav .container-nav {
     grid-template-columns: 0.5fr 2fr 0.5fr !important;
   }
   nav .nav-judul {
     align-items: center;
     justify-content: center;
+  }
+  nav .satu img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  nav .satu {
+    margin-top: -10px !important;
   }
   .header {
     height: 1100px;
@@ -1051,13 +1062,11 @@ section .container-profil {
   }
 }
 @media (max-width: 992px) {
-  .container-nav .list-nav li .active {
-    color: #f1841e !important;
-  }
   .icon-nav {
     display: flex;
   }
   .icon-nav img {
+    margin-top: -10px;
     width: 30px;
     height: 30px;
   }
@@ -1068,6 +1077,9 @@ section .container-profil {
     justify-content: center;
     align-items: center;
   }
+  nav .satu h2 {
+    color: white;
+  }
   nav .list-nav {
     z-index: -1;
     position: absolute;
@@ -1077,11 +1089,11 @@ section .container-profil {
     display: block !important;
     background-color: white;
     width: 100%;
-    transform: translateY(-130%);
-    transition: all 1s;
+    transform: translatex(-130%);
+    transition: all 0.3s;
   }
   nav ul.slide {
-    transform: translateY(10px);
+    transform: translatex(0px);
   }
 
   .menu-toggle {
@@ -1107,7 +1119,7 @@ section .container-profil {
     display: block;
     width: 28px;
     height: 4px;
-    background-color: black;
+    background-color: white;
     border-radius: 3px;
     transition: all 0.5s;
   }
@@ -1120,11 +1132,11 @@ section .container-profil {
   }
   .menu-toggle input:checked ~ span:nth-child(2) {
     transform: rotate(39deg) translate(-1px, -1px);
-    background-color: black !important;
+    background-color: white !important;
   }
   .menu-toggle input:checked ~ span:nth-child(4) {
     transform: rotate(-39deg) translate(-1px, 0);
-    background-color: black !important;
+    background-color: white !important;
   }
   .menu-toggle input:checked ~ span:nth-child(3) {
     transform: scale(0);
@@ -1137,14 +1149,19 @@ section .container-profil {
   .list-nav li {
     border-bottom: 1px solid black;
     width: 100% !important;
+    margin-left: -10px;
+    padding-right: 10px;
   }
   .list-nav li a {
     margin-left: 25px;
     font-size: 16px;
-    padding-right: 200px;
+    padding-right: 500px;
   }
   .partner {
     width: 80%;
+  }
+  .container-nav .list-nav li .active {
+    color: #f1841e !important;
   }
   section .container-berita .pembungkus {
     display: block;
@@ -1176,7 +1193,7 @@ section .container-profil {
   }
   .container-lokasi .location li {
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: 0;
   }
 
   .container-lokasi .location li img {
